@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>cc.whispir.wsc</groupId>
+    <artifactId>wsc-java-sdk-pom</artifactId>
+    <version>0.1.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>WSC SDK for Java</name>
+    <description>.</description>
+    <url></url>
+
+    <developers>
+        <developer>
+            <id>whispircnappservices</id>
+            <organization>Whispircn APP Services</organization>
+            <organizationUrl></organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+    <!-- The module section in pom.xml is auto generated. No manual changes are allowed -->
+    <modules>
+        <module>wsc-java-sdk-app</module>
+    </modules>
+    <scm>
+        <connection>scm:git:https://github.com/garenwen/wsc-sdk-java.git</connection>
+        <developerConnection>scm:git:git@github.com:garenwen/wsc-sdk-java.git</developerConnection>
+        <url>https://github.com/aws/aws-sdk-java</url>
+    </scm>
+    <properties>
+        <awsjavasdk.version>${project.version}</awsjavasdk.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jre.version>1.6</jre.version>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.6.0</version>
+                    <configuration>
+                        <source>${jre.version}</source>
+                        <target>${jre.version}</target>
+                        <encoding>UTF-8</encoding>
+                        <forceJavacCompilerUse>true</forceJavacCompilerUse>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.9.1</version>
+                    <configuration>
+                        <excludePackageNames>*.transform</excludePackageNames>
+                        <minmemory>128m</minmemory>
+                        <maxmemory>1024m</maxmemory>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.19.1</version>
+                    <configuration>
+                        <excludes>
+                            <exclude>**/*CucumberTest.java</exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
