@@ -7,23 +7,15 @@
         <artifactId>wsc-java-sdk-pom</artifactId>
         <version>0.1.1-SNAPSHOT</version>
     </parent>
-    <groupId>cc.whispir.wsc.app</groupId>
-    <artifactId>wsc-java-sdk-app</artifactId>
-    <name>app</name>
+    <groupId>cc.whispir.wsc.internal</groupId>
+    <artifactId>wsc-java-sdk-internal</artifactId>
+    <name>internal</name>
     <description>b.</description>
     <url></url>
 
     <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
-    <dependencies>
-        <dependency>
-            <groupId>cc.whispir.wsc.internal</groupId>
-            <artifactId>wsc-java-sdk-internal</artifactId>
-            <version>0.1.1-SNAPSHOT</version>
-        </dependency>
 
-    </dependencies>
     <build>
-
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
