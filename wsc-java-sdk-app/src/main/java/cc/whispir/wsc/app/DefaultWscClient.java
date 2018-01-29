@@ -113,7 +113,7 @@ public class DefaultWscClient implements WscAppClient {
         sb.append(this.appId).append("&");
         sb.append("POST").append("&");
 
-        sb.append(URLEncodedUtils.format(params, "UTF-8"));
+        sb.append(URLEncodedUtils.format(params, WscConstants.CHARSET_UTF8));
 
         String sign = HmacSha1Signature.calculateRFC2104HMAC(sb.toString(), this.appSecret, WscConstants.CHARSET_UTF8);
         System.out.println(sb.toString());
