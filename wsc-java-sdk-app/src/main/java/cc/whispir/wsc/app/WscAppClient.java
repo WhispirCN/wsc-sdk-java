@@ -1,10 +1,18 @@
 package cc.whispir.wsc.app;
 
+
+
+import java.io.IOException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.SignatureException;
+
 /**
  * Created by garen on 2018/1/22.
  */
 public interface WscAppClient {
-    public <T extends WscResponse> T execute(WscRequest<T> request) throws WscException;
+
+    public WscResponse execute(WscRequest request) throws IOException, NoSuchAlgorithmException, SignatureException, InvalidKeyException;
 
 
 }

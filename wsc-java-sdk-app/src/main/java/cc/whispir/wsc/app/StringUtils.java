@@ -1,4 +1,4 @@
-package cc.whispir.wsc.internal.util;
+package cc.whispir.wsc.app;
 
 /**
  * 字符串工具类。

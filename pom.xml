@@ -23,12 +23,12 @@
     <!-- The module section in pom.xml is auto generated. No manual changes are allowed -->
     <modules>
         <module>wsc-java-sdk-app</module>
-        <module>wsc-java-sdk-internal</module>
+        <!--<module>wsc-java-sdk-internal</module>-->
     </modules>
     <scm>
         <connection>scm:git:https://github.com/garenwen/wsc-sdk-java.git</connection>
         <developerConnection>scm:git:git@github.com:garenwen/wsc-sdk-java.git</developerConnection>
-        <url>https://github.com/aws/aws-sdk-java</url>
+        <url>https://github.com/garenwen/wsc-sdk-java</url>
     </scm>
     <properties>
         <awsjavasdk.version>${project.version}</awsjavasdk.version>

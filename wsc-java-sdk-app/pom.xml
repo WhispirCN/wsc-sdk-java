@@ -15,11 +15,38 @@
 
     <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
     <dependencies>
+        <!--<dependency>-->
+            <!--<groupId>cc.whispir.wsc.internal</groupId>-->
+            <!--<artifactId>wsc-java-sdk-internal</artifactId>-->
+            <!--<version>0.1.1-SNAPSHOT</version>-->
+        <!--</dependency>-->
         <dependency>
-            <groupId>cc.whispir.wsc.internal</groupId>
-            <artifactId>wsc-java-sdk-internal</artifactId>
-            <version>0.1.1-SNAPSHOT</version>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20171018</version>
         </dependency>
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>1.4.9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.3</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+       
 
     </dependencies>
     <build>
