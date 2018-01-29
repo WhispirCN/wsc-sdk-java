@@ -3,6 +3,7 @@ package cc.whispir.wsc.app;
 
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SignatureException;
@@ -12,7 +13,7 @@ import java.security.SignatureException;
  */
 public interface WscAppClient {
 
-    public WscResponse execute(WscRequest request) throws IOException, NoSuchAlgorithmException, SignatureException, InvalidKeyException;
+    public WscResponse execute(WscRequest request) throws IOException, NoSuchAlgorithmException, SignatureException, InvalidKeyException, URISyntaxException;
 
 
 }

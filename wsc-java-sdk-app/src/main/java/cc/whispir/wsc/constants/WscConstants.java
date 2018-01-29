@@ -1,4 +1,4 @@
-package cc.whispir.wsc.app;
+package cc.whispir.wsc.constants;
 
 /**
  * Created by garen on 2018/1/22.
@@ -8,16 +8,7 @@ public class WscConstants {
 
     public static final String SIGN_TYPE_RSA                  = "RSA";
 
-    /**
-     * sha256WithRsa 算法请求类型
-     */
-    public static final String SIGN_TYPE_RSA2                 = "RSA2";
-
-    public static final String SIGN_ALGORITHMS                = "SHA1WithRSA";
-
-    public static final String SIGN_SHA256RSA_ALGORITHMS      = "SHA256WithRSA";
-
-    public static final String ENCRYPT_TYPE_AES               = "AES";
+    public static final String SIGN_TYPE_HMAC_SHA1 = "HMAC-SHA1";
 
     public static final String APP_ID                         = "app_id";
 
@@ -31,12 +22,6 @@ public class WscConstants {
 
     public static final String SIGN                           = "sign";
 
-    public static final String ALIPAY_SDK                     = "alipay_sdk";
-
-    public static final String ACCESS_TOKEN                   = "auth_token";
-
-    public static final String APP_AUTH_TOKEN                 = "app_auth_token";
-
     public static final String TERMINAL_TYPE                  = "terminal_type";
 
     public static final String TERMINAL_INFO                  = "terminal_info";
@@ -49,9 +34,6 @@ public class WscConstants {
 
     public static final String ENCRYPT_TYPE                   = "encrypt_type";
 
-    //-----===-------///
-
-    public static final String BIZ_CONTENT_KEY                = "biz_content";
 
     /** 默认时间格式 **/
     public static final String DATE_TIME_FORMAT               = "yyyy-MM-dd HH:mm:ss";
@@ -62,26 +44,10 @@ public class WscConstants {
     /** UTF-8字符集 **/
     public static final String CHARSET_UTF8                   = "UTF-8";
 
-    /** GBK字符集 **/
-    public static final String CHARSET_GBK                    = "GBK";
-
     /** JSON 应格式 */
     public static final String FORMAT_JSON                    = "json";
 
     /** XML 应格式 */
     public static final String FORMAT_XML                     = "xml";
 
-    /** SDK版本号 */
-    public static final String SDK_VERSION                    = "alipay-sdk-java-dynamicVersionNo";
-
-    public static final String PROD_CODE                      = "prod_code";
-
-    /** 老版本失败节点 */
-    public static final String ERROR_RESPONSE                 = "error_response";
-
-    /** 新版本节点后缀 */
-    public static final String RESPONSE_SUFFIX                = "_response";
-
-    /** 加密后XML返回报文的节点名字 */
-    public static final String RESPONSE_XML_ENCRYPT_NODE_NAME = "response_encrypted";
 }

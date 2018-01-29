@@ -7,8 +7,10 @@ import java.util.Map;
  */
 public class WscRequest {
 
+    private boolean secure;
 
     private String name;
+
     private Map<String,Object> event;
 
     public String getName() {
@@ -25,5 +27,13 @@ public class WscRequest {
 
     public void setEvent(Map<String, Object> event) {
         this.event = event;
+    }
+
+    public boolean isSecure() {
+        return secure;
+    }
+
+    public void setSecure(boolean secure) {
+        this.secure = secure;
     }
 }

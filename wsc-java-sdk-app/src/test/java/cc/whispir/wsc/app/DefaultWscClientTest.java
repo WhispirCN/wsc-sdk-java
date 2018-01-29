@@ -1,6 +1,7 @@
 package cc.whispir.wsc.app;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SignatureException;
@@ -30,6 +31,7 @@ public class DefaultWscClientTest {
 
         request.setEvent(event);
         request.setName("foo");
+        request.setSecure(false);
         try {
             WscResponse response = wac.execute(request);
         } catch (IOException e) {
@@ -39,6 +41,8 @@ public class DefaultWscClientTest {
         } catch (SignatureException e) {
             e.printStackTrace();
         } catch (InvalidKeyException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
             e.printStackTrace();
         }
     }

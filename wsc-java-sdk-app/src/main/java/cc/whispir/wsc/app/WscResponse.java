@@ -1,5 +1,6 @@
 package cc.whispir.wsc.app;
 
+import cc.whispir.wsc.util.StringUtils;
 import java.io.Serializable;
 import java.util.Map;
 
@@ -14,10 +15,6 @@ public class WscResponse implements Serializable{
     private String              code;
 
     private String              msg;
-
-    private String              subCode;
-
-    private String              subMsg;
 
     private String              body;
     private Map<String, String> params;
@@ -50,22 +47,6 @@ public class WscResponse implements Serializable{
         this.msg = msg;
     }
 
-    public String getSubCode() {
-        return this.subCode;
-    }
-
-    public void setSubCode(String subCode) {
-        this.subCode = subCode;
-    }
-
-    public String getSubMsg() {
-        return this.subMsg;
-    }
-
-    public void setSubMsg(String subMsg) {
-        this.subMsg = subMsg;
-    }
-
     public String getBody() {
         return body;
     }
@@ -82,7 +63,4 @@ public class WscResponse implements Serializable{
         this.params = params;
     }
 
-    public boolean isSuccess() {
-        return StringUtils.isEmpty(subCode);
-    }
 }
