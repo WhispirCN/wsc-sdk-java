@@ -18,22 +18,23 @@ public class DefaultWscClientTest {
 
     @Test
     public void execute() {
-        //Url: "https://d-app.whispir.cc/a/app-027d30049900adf1/v1/events",
-        //        AppId: "027d30049900adf1",
-        //        AppSecret: "pULnwkHww9RuRFTcN9H3E9mAd0gcYBSmzAOqAYSEoBU=",
-        WscAppClient wac = new DefaultWscClient("https://d-app.whispir.cc/a/app-027d30049900adf1/v1/events","027d30049900adf1","pULnwkHww9RuRFTcN9H3E9mAd0gcYBSmzAOqAYSEoBU=");
+        // Url: "https://app.wizardcloud.cn/a/app-033f5501e4000e4b/v1/events/whoru",
+        // AppId: "033f5501e4000e4b",
+        // AppSecret: "ZBWRGW2n97nn/5n7CeLxhdSV3/POSDlpRQ/cMVIGxhQ=",
+        WscAppClient wac = new DefaultWscClient("https://app.wizardcloud.cn/a/app-033f5501e4000e4b/v1/events","033f5501e4000e4b","ZBWRGW2n97nn/5n7CeLxhdSV3/POSDlpRQ/cMVIGxhQ=");
 
         WscRequest request = new WscRequest();
-        Map<String,Object> event = new HashMap<String,Object>();
-
-        event.put("to","garenwen@whispir.cc");
-        event.put("content","hello world");
-
-        request.setEvent(event);
-        request.setName("foo");
-        request.setSecure(false);
+//        Map<String,Object> event = new HashMap<String,Object>();
+//
+//        event.put("to","garenwen@whispir.cc");
+//        event.put("content","hello world");
+//
+//        request.setEvent(event);
+        request.setName("whoru");
+        request.setSecure(true);
         try {
             WscResponse response = wac.execute(request);
+            System.out.println(response.getBody());
         } catch (IOException e) {
             e.printStackTrace();
         } catch (NoSuchAlgorithmException e) {

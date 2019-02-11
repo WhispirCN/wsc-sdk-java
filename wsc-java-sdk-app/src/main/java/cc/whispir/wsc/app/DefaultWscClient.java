@@ -1,13 +1,9 @@
 package cc.whispir.wsc.app;
 
 
-import cc.whispir.wsc.constants.WscConstants;
-import cc.whispir.wsc.util.DateUtils;
-import cc.whispir.wsc.util.HmacSha1Signature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.xml.DomDriver;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -17,6 +13,7 @@ import java.security.SignatureException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -27,6 +24,14 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
+
+import cc.whispir.wsc.constants.WscConstants;
+import cc.whispir.wsc.util.DateUtils;
+import cc.whispir.wsc.util.HmacSha1Signature;
 
 
 /**
@@ -97,6 +102,22 @@ public class DefaultWscClient implements WscAppClient {
         try {
 
             response = httpClient.execute(httpPost);
+            
+            BufferedReader reader = new BufferedReader(new InputStreamReader(
+            		response.getEntity().getContent()));
+
+            String inputLine;
+            StringBuffer response1 = new StringBuffer();
+
+            while ((inputLine = reader.readLine()) != null) {
+                response1.append(inputLine);
+            }
+            reader.close();
+
+            // print result
+            WscResponse resp = new WscResponse();
+            resp.setBody(response1.toString());
+            return resp;
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -116,7 +137,6 @@ public class DefaultWscClient implements WscAppClient {
         sb.append(URLEncodedUtils.format(params, WscConstants.CHARSET_UTF8));
 
         String sign = HmacSha1Signature.calculateRFC2104HMAC(sb.toString(), this.appSecret, WscConstants.CHARSET_UTF8);
-        System.out.println(sb.toString());
         params.add(new BasicNameValuePair("sign", sign));
         return params;
     }
